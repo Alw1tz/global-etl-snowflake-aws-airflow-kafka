@@ -1,0 +1,21 @@
+# Claude Code
+.claude/
+
+# Credentials — never commit these
+.env
+aws/users_credentials/
+
+# Airflow generated files
+airflow/logs/
+airflow/config/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
