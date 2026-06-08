@@ -1,0 +1,4 @@
+INSERT INTO {table} VALUES
+(1, 'PENDING', 100.0),
+(2, 'PENDING', 250.0),
+(3, 'PENDING', 75.5)

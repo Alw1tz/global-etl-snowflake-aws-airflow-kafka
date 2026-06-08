@@ -100,6 +100,19 @@ services:
           --password ${_AIRFLOW_WWW_USER_PASSWORD:-airflow} \
           --firstname Admin --lastname User \
           --role Admin --email admin@example.com
+        /entrypoint airflow connections delete snowflake_default 2>/dev/null || true
+        /entrypoint airflow connections add snowflake_default \
+          --conn-type snowflake \
+          --conn-login "$${SNOWFLAKE_USER}" \
+          --conn-password "$${SNOWFLAKE_PASSWORD}" \
+          --conn-schema "$${SNOWFLAKE_SCHEMA}" \
+          --conn-extra "{\"account\": \"$${SNOWFLAKE_ACCOUNT}\", \"warehouse\": \"$${SNOWFLAKE_WAREHOUSE}\", \"database\": \"$${SNOWFLAKE_DATABASE}\", \"role\": \"$${SNOWFLAKE_ROLE}\"}"
+        /entrypoint airflow connections delete aws_default 2>/dev/null || true
+        /entrypoint airflow connections add aws_default \
+          --conn-type aws \
+          --conn-login "$${AWS_ACCESS_KEY_ID}" \
+          --conn-password "$${AWS_SECRET_ACCESS_KEY}" \
+          --conn-extra "{\"region_name\": \"$${AWS_DEFAULT_REGION}\"}"
     environment:
       <<: *airflow-common-env
       _AIRFLOW_DB_MIGRATE: 'true'

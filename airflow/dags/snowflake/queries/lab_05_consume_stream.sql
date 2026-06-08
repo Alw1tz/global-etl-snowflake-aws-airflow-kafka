@@ -1,0 +1,4 @@
+INSERT INTO {sink}
+SELECT id, event_type, payload, CURRENT_TIMESTAMP()
+FROM   {stream}
+WHERE  METADATA$ACTION = 'INSERT'

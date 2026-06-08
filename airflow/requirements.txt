@@ -2,3 +2,4 @@ apache-airflow-providers-amazon
 apache-airflow-providers-snowflake
 snowflake-connector-python
 boto3
+confluent-kafka

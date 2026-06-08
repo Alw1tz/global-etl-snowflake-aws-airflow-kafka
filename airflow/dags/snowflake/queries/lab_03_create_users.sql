@@ -1,0 +1,6 @@
+CREATE OR REPLACE TABLE {table} (
+    id         NUMBER AUTOINCREMENT PRIMARY KEY,
+    name       VARCHAR(100),
+    email      VARCHAR(200),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
+)
