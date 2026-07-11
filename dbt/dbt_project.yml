@@ -1,0 +1,15 @@
+name: 'data_lake'
+version: '1.0.0'
+config-version: 2
+profile: 'default'
+vars:
+  bronze_schema: 'bronze'
+  silver_schema: 'silver'
+  gold_schema: 'gold'
+models:
+  bronze:
+    +schema: '{{ var("bronze_schema") }}'
+  silver:
+    +schema: '{{ var("silver_schema") }}'
+  gold:
+    +schema: '{{ var("gold_schema") }}'
