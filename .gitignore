@@ -20,5 +20,20 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Personal 
+# Personal
 notes.txt
+.aider*
+
+# Standalone project sandboxes (each is its own git repo, not part of this one)
+spark-aws-pipeline/
+dbt-snowflake-analytics/
+kafka-streaming/
+principal-data-ai-engineer-handbook/
+
+# Personal tools (not portfolio repos)
+open-webui/
+agentic-reconciliation-platform/
+
+# Private / company material — must never be pushed (this repo is public)
+rpp-airflow-product-mx/
+rpp-airflow-product-mx.zip
